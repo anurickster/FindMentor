@@ -1,0 +1,103 @@
+.main-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+}
+
+.example-of-usage {
+  color: red;
+}
+.Course_details_container {
+  background-color: rgb(27, 26, 26);
+  display: grid;
+  margin: 0rem;
+  padding: 1.5rem;
+  height: fit-content;
+  color: rgb(252, 252, 252);
+  grid-template-columns: 2fr 1fr;
+}
+.courseDetails_Heading h1 {
+  background-color: rgb(71, 71, 71);
+  font-size: 2.2rem;
+  border-radius: 0.8rem;
+  padding: 1.5rem 2rem;
+}
+.courseDetails_Heading .Rating span {
+  color: rgb(255, 200, 0);
+}
+.courseDetails_Heading .Reviews {
+  position: relative;
+  top: 0.5rem;
+}
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+.courseDetails_Heading .Mentor_Name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(232, 232, 232);
+}
+.Course_Is_for {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(232, 232, 232);
+  list-style: none;
+}
+.Course_Is_for li {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  background-color: rgb(61, 61, 61);
+  margin: 0.2rem;
+}
+.no_of_students {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(118, 118, 118);
+}
+.Course_details_container_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 1.5rem;
+  height: fit-content;
+  color: rgb(252, 252, 252);
+  border: 1px solid rgb(71, 71, 71);
+  border-radius: 2rem;
+  box-shadow: 2px 4px 8px rgb(71, 71, 71);
+  height: 100%;
+}
+
+.course_Topics_container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgb(61, 61, 61);
+}
+.course_Topics_container > .sec_Heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(89, 89, 89);
+}
+.course_content_container li {
+  margin-right: 5rem;
+  list-style: circle;
+}
+.Topics {
+  list-style-type: upper-roman;
+}
+.course_Topics_container div .sec_Heading {
+  font-size: 1.5rem;
+  color: rgb(125, 125, 125);
+}

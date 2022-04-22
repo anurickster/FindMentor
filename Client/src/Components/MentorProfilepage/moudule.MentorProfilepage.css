@@ -1,0 +1,103 @@
+.main-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+}
+
+.example-of-usage {
+  color: red;
+}
+/* css  */
+.Mentor__Profile__Page__Container {
+  display: flex;
+  flex-direction: column;
+}
+.Top__Section {
+  display: grid;
+  margin-left: 4rem;
+  grid-template-columns: 1fr 3fr;
+}
+.Top__Section .Img__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50%;
+}
+.Top__Section .Img__div img {
+  width: 80%;
+  height: 90%;
+  border-radius: 50%;
+}
+.Top__Section .Details__div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+.Middle__Section {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 70% 25%;
+}
+.Middle__Section .Discription__div {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 4rem;
+}
+.Middle__Section .Discription__div > div {
+  margin-bottom: 1rem;
+}
+.Middle__Section .Card__div {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 2px #e0e0e0;
+  margin: 1rem 2rem;
+  flex-direction: column;
+  padding: 1rem 4rem;
+}
+.Skills {
+  display: flex;
+  flex-direction: column;
+}
+.skills__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 700px;
+}
+.Skill__div {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  /* flex-direction: row !important; */
+  margin: 0.5rem;
+  /* width: 80%; */
+}
+.Skill__div .Skills__badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  width: min-content;
+  /* display: block; */
+  background-color: rgb(127, 227, 255);
+}
+.Card__div__inner {
+  position: relative;
+  height: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.Apply__Mentor {
+  /* position: absolute; */
+  /* bottom: 0rem; */
+  background-color: rgb(102, 161, 251);
+}
+
+.Bottom__Section{
+  margin: 0 0 0 4rem;
+}

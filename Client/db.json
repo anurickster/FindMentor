@@ -1,0 +1,189 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Puneet Vashist",
+      "yearExperience": 3,
+      "monthExperience": 6,
+      "mentorSkills": ["Python", "C"]
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Akshay Mittal",
+      "yearExperience": 5,
+      "monthExperience": 3,
+      "mentorSkills": ["C++", "C#", "Ruby"]
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Manju Yadav",
+      "yearExperience": 0,
+      "monthExperience": 8,
+      "mentorSkills": ["Kotlin", "Java", "Python"]
+    },
+    {
+      "id": 4,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Ananya Anandita",
+      "yearExperience": 1,
+      "monthExperience": 4,
+      "mentorSkills": ["AWS", "Google Cloud", "Go Lang"]
+    },
+    {
+      "id": 5,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Mohit Ajay Gandhewar",
+      "yearExperience": 0,
+      "monthExperience": 0,
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
+    },
+    {
+      "id": 6,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Dipanshu Partap Singh",
+      "yearExperience": 0,
+      "monthExperience": 7,
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
+    },
+    {
+      "id": 7,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Puneet Vashist",
+      "yearExperience": 3,
+      "monthExperience": 6,
+      "mentorSkills": ["Python", "C"]
+    },
+    {
+      "id": 8,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Akshay Mittal",
+      "yearExperience": 5,
+      "monthExperience": 3,
+      "mentorSkills": ["C++", "C#", "Ruby"]
+    },
+    {
+      "id": 9,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Manju Yadav",
+      "yearExperience": 0,
+      "monthExperience": 8,
+      "mentorSkills": ["Kotlin", "Java", "Python"]
+    },
+    {
+      "id": 10,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Ananya Anandita",
+      "yearExperience": 1,
+      "monthExperience": 4,
+      "mentorSkills": ["AWS", "Google Cloud", "Go Lang"]
+    },
+    {
+      "id": 11,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Mohit Ajay Gandhewar",
+      "yearExperience": 0,
+      "monthExperience": 0,
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
+    },
+    {
+      "id": 12,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorName": "Dipanshu Partap Singh",
+      "yearExperience": 0,
+      "monthExperience": 7,
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "email": "admin@email.com",
+      "password": "12345admin",
+      "isadmin": true
+    },
+    {
+      "id": 2,
+      "email": "student@email.com",
+      "password": "12345stud",
+      "isadmin": false
+    },
+    {
+      "id": 3,
+      "email": "student01@email.com",
+      "password": "12345tud",
+      "isadmin": false
+    }
+  ],
+  "mentors": [
+    {
+      "id": "13",
+      "mname": "Mohit Gandhewar",
+      "experience": "4",
+      "skills": ["Html", "css", "C", "React", "Angular", "Node", "Express"],
+      "courses": ["Full Stack Web Development", "Python", "C-programming"],
+      "linkedin": "https://www.linkedin.com/in/pratik-gupta-46a62b16b/",
+      "github": "https://github.com/MohitGandhewar"
+    },
+    {
+      "id": "12",
+      "mname": "Pratik Gupta",
+      "experience": "1",
+      "skills": ["Html", "css", "C", "C++"],
+      "courses": ["web design", "C-programming"],
+      "linkedin": "https://www.linkedin.com/in/pratik-gupta-46a62b16b/",
+      "github": ""
+    },
+    {
+      "id": "14",
+      "mname": "Jayesh Borse",
+      "experience": "2",
+      "skills": ["Html", "java", "Python"],
+      "courses": ["Python Basics"],
+      "linkedin": "https://www.linkedin.com/in/jayesh-borse-37193720b/",
+      "github": "https://github.com/Jayeshb56"
+    },
+    {
+      "id": "16",
+      "mname": "Rakesh Khanna",
+      "experience": "7",
+      "skills": ["Acting", "Drama", "Stunts", "Director", "Leader"],
+      "courses": ["How to be a Actor"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": "20",
+      "mname": "Nikhil unhale2",
+      "experience": "2",
+      "skills": ["css", "html"],
+      "courses": ["python"],
+      "linkedin": "https://www.linkedin.com/in/david-m-solomon/",
+      "github": "https://github.com/MohitGandhewar"
+    }
+  ],
+  "courses": [
+    {
+      "id": "wxSV450",
+      "course_title": "Python Basics Bootcamp 2022 - Python for Beginners",
+      "course_duration": "68",
+      "lectures": 82,
+      "level": ["Beginner", "Intermediate", "Advanced"],
+      "discription": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "course_content": [
+        "Fundamentals",
+        "Data Types",
+        "Variables",
+        "Functions",
+        "Lists"
+      ],
+      "students": 13288,
+      "mentor": "13",
+      "mentor_name": "Mohit Ajay Gandhewar",
+      "price": "1480 ",
+      "course_Img": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png"
+    }
+  ]
+}

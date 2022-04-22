@@ -1,0 +1,67 @@
+.main-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+}
+
+.example-of-usage {
+  color: red;
+}
+/* css */
+.Services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Mentor_Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  /* height: 450px; */
+}
+.Form_Heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.MentorFormImage {
+  height: 470px;
+  width: 500px;
+}
+.Mentor_Form div input {
+  height: 2rem;
+  border: 1px solid rgb(139, 139, 139);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.4rem;
+  margin: 0.3rem 0;
+  width: 100%;
+  color: rgb(73, 73, 73);
+}
+.Mentor_Form div textarea {
+  border: 1px solid rgb(139, 139, 139);
+  border-radius: 0.5rem;
+  margin: 0.2rem 0;
+  padding: 0rem 0.4rem;
+  font-size: 1.2rem;
+  width: 100%;
+  color: rgb(168, 168, 168);
+  height: 5rem;
+}
+.Mentor_Form .BTN.Submit {
+  height: 3rem;
+  border: 1px solid rgb(139, 139, 139);
+  background-color: rgb(31, 98, 221, 0.8);
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.4rem;
+  margin: 0.4rem 0;
+  width: 100%;
+  color: white;
+}
+.Mentor_Form .BTN.Submit:hover {
+  background-color: rgb(31, 98, 221);
+}
