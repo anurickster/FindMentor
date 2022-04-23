@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 
 import './module.ViewCoursespage.css';
@@ -12,28 +12,27 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Rating from '@mui/material/Rating';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ViewCoursespage = () => {
-  const [mentors, setMentors] = React.useState(['']);
-  const [coursesList, setCoursesList] = React.useState(['']);
+  const navigate = useNavigate();
+  const [mentors, setMentors] = useState(['']);
+  const [coursesList, setCoursesList] = useState(['']);
   const ImgArray = [Img1, Img2, Img3, Img4, Img5];
-  const [moreOptions, setMoreOptions] = React.useState(0); //for more options
-  const [usertype, setUsertype] = React.useState('');
-  const [userId, setUserId] = React.useState('');
+  const [moreOptions, setMoreOptions] = useState(0); //for more options
+  const [usertype, setUsertype] = useState('');
+  const [userId, setUserId] = useState('');
 
   useEffect(() => {
     axios
       .get('http://localhost:9000/courses')
       .then((res) => {
-        console.log(res.data);
         setCoursesList(res.data);
-        console.log(coursesList);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [mentors.length]);
+  }, []);
 
   const ShowMoreOptions = (event, id) => {
     event.preventDefault();
@@ -54,14 +53,12 @@ const ViewCoursespage = () => {
 
   const viewMentorDetails = (event, id) => {
     event.preventDefault();
-    window.location.href = `/mentorprofile/`;
-    // window.location.href = `/mentorprofile/${id}`;
+    navigate(`/mentorprofile`);
   };
   const viewCourseDetails = (event, id) => {
     event.preventDefault();
     console.log(id);
-    window.location.href = `/coursedetails/${id}`;
-    // window.location.href = `/courseprofile/${id}`;
+    navigate(`/coursedetails/${id}`);
   };
 
   return (
@@ -100,7 +97,7 @@ const ViewCoursespage = () => {
                           <GitHubIcon className='Github__Icon' />
                         </a>
                       ) : null}
-                      {usertype === 'mentor' && userId == course.id ? (
+                      {usertype === 'mentor' && userId === course.id ? (
                         <>
                           <MoreVertIcon
                             className='More__Icon'
@@ -139,12 +136,12 @@ const ViewCoursespage = () => {
                     {/* <p> Discription : {course.discription} Years</p> */}
                     <p className='By_Mentor'>
                       By :
-                      <button
+                      <span
                         className='viewMentorDetails'
                         onClick={(e) => viewMentorDetails(e, course.mentor)}
                       >
                         {course.mentor_name}
-                      </button>
+                      </span>
                     </p>
 
                     {/* <p>Contents</p>

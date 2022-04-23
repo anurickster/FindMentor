@@ -11,6 +11,15 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
+  let mentor = await Mentor.findOne({ mUserid: req.params.id }).populate(
+    'mUserid',
+    'name'
+  );
+  res.status(200).json(mentor);
+  console.log(req.params.id);
+});
+
+router.get('/MpostD/:id', async (req, res) => {
   let mentor = await Mentor.findById(req.params.id).populate('mUserid', 'name');
   res.json(mentor);
   console.log(req.params.id);

@@ -23,7 +23,7 @@ const MentorCards = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:7000/mentors')
+      .get('http://localhost:9000/mentors')
       .then((res) => {
         console.log(res.data);
         setMentors(res.data);
@@ -32,20 +32,26 @@ const MentorCards = () => {
       .catch((err) => {
         console.log(err);
       });
-    axios
-      .get('http://localhost:9000/courses')
-      .then((res) => {
-        console.log(res.data);
-        setCoursesList(res.data);
-        console.log(coursesList);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+    //////// i think this is not needed //////////////
+    // axios
+    //   .get('http://localhost:9000/courses')
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setCoursesList(res.data);
+    //     console.log(coursesList);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
     // } else {
     // window.location.href = "/";
     // }
   }, [mentors.length]);
+
+  // all mentors data by url
+  const mentorDataresponse = axios.get('http://localhost:9000/mentors');
+  console.log(mentorDataresponse);
 
   const ShowMoreOptions = (event, id) => {
     event.preventDefault();

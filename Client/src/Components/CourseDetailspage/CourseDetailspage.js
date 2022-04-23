@@ -3,12 +3,12 @@ import './module.CourseDetailspage.css';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
+import Navigationbar from '../../Components/Navigationbar/Navigationbar';
 
 const CourseDetailspage = () => {
   const [course, setCourse] = useState({});
 
   const { id } = useParams();
-  // console.log(id);
   useEffect(() => {
     if (id) {
       axios.get(`http://localhost:9000/courses/${id}`).then((res) => {
@@ -16,13 +16,11 @@ const CourseDetailspage = () => {
         setCourse(res.data);
       });
     }
-  }, []);
-
-  // console.log(course);
-  // console.log(course.level);
+  }, [id]);
 
   return (
     <>
+      <Navigationbar />
       <div className='Course_details_container'>
         <div className='Course_details_container_left'>
           <div className='courseDetails_Heading'>

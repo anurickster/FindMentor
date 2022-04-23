@@ -5,6 +5,8 @@ import MentorImg from './mentorImg.jpg';
 import course from './courses.png';
 import ViewCoursespage from '../ViewCoursespage/ViewCoursespage';
 import Navigationbar from '../Navigationbar/Navigationbar';
+import axios from 'axios';
+import tokenDecoder from '../../addons/tokenDecoder';
 // import FacebookIcon from "@mui/icons-material/Facebook";
 
 const MentorProfilepage = () => {
@@ -12,6 +14,18 @@ const MentorProfilepage = () => {
   const applyToMentor = () => {
     navigate('/applytomentor');
   };
+
+  // get single mentor details passed id by token which is stored in tokenDecoder().id funtion call
+  // we can also take role by passing tokenDecoder().role funtion call
+  const selectedMentorServerRes = async () => {
+    let dTokendata = tokenDecoder().id;
+    let selectedMentorData = await axios.get(
+      `http://localhost:9000/mentors/${dTokendata}`
+    );
+    console.log(selectedMentorData.data);
+  };
+
+  selectedMentorServerRes(); // this function is called for calling selected mentor data from server
 
   const Skills = [
     'Java',
@@ -72,8 +86,8 @@ const MentorProfilepage = () => {
             <div className='Skills'>
               <h3>Skills</h3>
               <div className='skills__list'>
-                {Skills.map((skill) => (
-                  <div className='Skill__div'>
+                {Skills.map((skill, i) => (
+                  <div key={'id' + i} className='Skill__div'>
                     <p className='Skills__badge'>{skill}</p>
                   </div>
                 ))}

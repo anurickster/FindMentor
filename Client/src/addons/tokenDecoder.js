@@ -6,7 +6,7 @@ const tokenDecoder = () => {
     let decoded = decode(token);
     return decoded;
   } else {
-    let decoded = '';
+    let decoded = 'no token';
     return decoded;
   }
 };
