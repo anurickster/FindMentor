@@ -6,6 +6,7 @@ const MentorSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,
+    unique: true,
   },
   mCourses: {
     type: mongoose.Schema.Types.ObjectId,

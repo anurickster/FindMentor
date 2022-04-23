@@ -13,12 +13,17 @@ const userRoute = require('./routes/user');
 const errorHandler = require('./middlewares/errorHandler');
 const contactRoute = require('./routes/contact');
 
-// connect to db;
-const connnectToDB = async () => {
-  await mongoose.connect(url);
-  console.log('Connected to DB'.green, url);
-};
-connnectToDB();
+mongoose
+  .connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('Connected to DB'.green, url.yellow);
+  })
+  .catch((err) => {
+    console.log('Error'.red, err);
+  });
 
 // pre middlewares
 app.use(cors());
@@ -31,4 +36,4 @@ app.use('/contact', contactRoute);
 //post middlewares
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`Server is running on Port ${port}...`));
+app.listen(port, () => console.log(`Server is running on Port ${port}`));

@@ -6,15 +6,12 @@ const User = require('./../models/user');
 
 // protect route: by isAuthenticatedUser middleware
 router.get('/', async (req, res) => {
-  let mentors = await Mentor.find()
-
-  let mentorDetails = await User.find().populate('User', 'name email');
-
-  res.json([mentors]);
+  let mentors = await Mentor.find().populate('mUserid', 'name');
+  res.status(200).json(mentors);
 });
 
 router.get('/:id', async (req, res) => {
-  let mentor = await Mentor.findById(req.params.id);
+  let mentor = await Mentor.findById(req.params.id).populate('mUserid', 'name');
   res.json(mentor);
   console.log(req.params.id);
 });

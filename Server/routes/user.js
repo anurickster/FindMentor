@@ -11,13 +11,14 @@ router.post(
     const user = await User.create(req.body);
     console.log(req.body.email);
     const token = user.getSignedJwtToken();
-    const transporter = node_mailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'sakinalauppi@gmail.com',
-        pass: 'uppi1308',
-      },
-    });
+
+    // const transporter = node_mailer.createTransport({
+    //   service: 'gmail',
+    //   auth: {
+    //     user: 'sakinalauppi@gmail.com',
+    //     pass: 'uppi1308',
+    //   },
+    // });
 
     // var mailOptions = {
     //   from: 'findmentor@gmail.com',
@@ -34,7 +35,7 @@ router.post(
     //   }
     // });
 
-    res.status(201).json({ auth: true, token: token });
+    res.status(201).json({ id: user._id, auth: true, token: token });
   })
 );
 
