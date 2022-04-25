@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('./../models/user');
-const asyncHandler = require('express-async-handler');
-const { authenticateUser } = require('../middlewares/auth');
-const node_mailer = require('nodemailer');
+const User = require("./../models/user");
+const asyncHandler = require("express-async-handler");
+const { authenticateUser } = require("../middlewares/auth");
+const node_mailer = require("nodemailer");
 
 router.post(
-  '/signup',
+  "/signup",
   asyncHandler(async (req, res) => {
     const user = await User.create(req.body);
     console.log(req.body.email);
@@ -39,10 +39,15 @@ router.post(
   })
 );
 
-router.post('/login', authenticateUser, async (req, res) => {
+router.post("/login", authenticateUser, async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   const token = user.getSignedJwtToken();
   res.status(200).json({ auth: true, token: token });
 });
+
+// router.get("/MpostD/:id", async (req, res) => {
+//   const user = await User.findById(req.params.id);
+//   res.json(user);
+// });
 
 module.exports = router;

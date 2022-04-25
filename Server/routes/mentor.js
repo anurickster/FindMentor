@@ -1,38 +1,32 @@
-const express = require('express');
-const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
+const express = require("express");
+const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/auth");
 const router = express.Router();
-const Mentor = require('./../models/mentor');
-const User = require('./../models/user');
+const Mentor = require("./../models/mentor");
 
 // protect route: by isAuthenticatedUser middleware
-router.get('/', async (req, res) => {
-  let mentors = await Mentor.find().populate('mUserid', 'name');
+router.get("/", async (req, res) => {
+  let mentors = await Mentor.find().populate("mUserid", "name");
   res.status(200).json(mentors);
 });
 
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   let mentor = await Mentor.findOne({ mUserid: req.params.id }).populate(
-    'mUserid',
-    'name'
+    "mUserid",
+    "name"
   );
   res.status(200).json(mentor);
   console.log(req.params.id);
 });
 
-router.get('/MpostD/:id', async (req, res) => {
-  let mentor = await Mentor.findById(req.params.id).populate('mUserid', 'name');
-  res.json(mentor);
-  console.log(req.params.id);
-});
-
 // protect route: by [isAuthenticatedUser, authorizeRoles('admin')]
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   // db and insert one mentor
+  console.log(req.body);
   let mentor = await Mentor.create(req.body);
   res.status(201).json(mentor);
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   // db and delete one mentor
   console.log(req.params.id);
   let result = await Mentor.findByIdAndDelete(req.params.id);
@@ -40,10 +34,14 @@ router.delete('/:id', async (req, res) => {
   res.json(result);
 });
 
-router.patch('/:id', async (req, res) => {
+router.patch("/:id", async (req, res) => {
   // db and update one mentor
-  let updatedMentor = await Mentor.findByIdAndUpdate(req.params.id, req.body);
+  let updatedMentor = await Mentor.findOneAndUpdate(
+    { mUserid: req.params.id },
+    req.body
+  );
   res.json(updatedMentor);
+  console.log(updatedMentor);
 });
 
 module.exports = router;
