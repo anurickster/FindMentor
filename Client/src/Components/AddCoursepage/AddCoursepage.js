@@ -12,8 +12,8 @@ const AddCoursepage = () => {
   const { id } = useParams();
 
   const [courseDetails, setCourseDetails] = useState({
-    course_title: null,
-    course_duration: null,
+    course_title: '',
+    course_duration: '',
     lectures: '',
     level: [],
     description: '',
@@ -45,7 +45,7 @@ const AddCoursepage = () => {
   };
 
   const loadMentor = async () => {
-    const result = await axios.get(`http://localhost:7000/mentors/${id}`);
+    const result = await axios.get(`http://localhost:9000/mentors/${id}`);
     console.log(result.data);
     setCourseDetails(result.data);
   };

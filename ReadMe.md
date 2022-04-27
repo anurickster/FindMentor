@@ -12,17 +12,11 @@ in category frontend and backend
 
 Member Name: Member Action
 
-### Component Assined
-
-- Mohit: Mentor, Homepage
-- Ashwini: Login, Register
-- Upendhar: inform me what to assign
-- Anurag: update mentor operations, rectify errors, code cleaning
-- Jayesh: associated with everyone
-
 ### Fixed
 
-- minor UI issues
+- 27-4-2022
+  > Fixedview mentor profile role student and mentor
+  > component render with state
 
 ### Added
 
