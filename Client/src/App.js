@@ -22,12 +22,14 @@ import ViewCoursespage from "./Components/ViewCoursespage/ViewCoursespage";
 import CourseDetailspage from "./Components/CourseDetailspage/CourseDetailspage";
 import StudentLandpage from "./Components/StudentLandpage/StudentLandpage";
 import Footer from "./Components/Footerpage/Footer";
+import ScrollToTop from "./addons/ScrollToTop";
 
 function App() {
   return (
     <>
-      <SessionManager></SessionManager>
+      <SessionManager />
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Loginpage />} />
           <Route path="/register" element={<Signuppage />} />
