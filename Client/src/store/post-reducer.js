@@ -7,16 +7,21 @@ const postReducer = createSlice({
     FETCH_POSTS(state, action) {
       return { posts: action.payload };
     },
+    FETCH_POST(state, action) {
+      return { posts: action.payload };
+    },
     ADD_POST(state, action) {
-      let newPosts = [...state.posts, action.payload];
+      const newPosts = [...state.posts, action.payload];
       return { posts: newPosts };
     },
     PATCH_POST(state, action) {
-      let newPost = [...state.posts, action.payload];
+      const newPost = [...state.posts, action.payload];
       return { posts: newPost };
     },
     DELETE_POST(state, action) {
-      let filteredPosts = state.posts.filter((p) => p.id !== action.payload.id);
+      const filteredPosts = state.posts.filter(
+        (p) => p.id !== action.payload.id
+      );
       return { posts: filteredPosts };
     },
   },
@@ -26,14 +31,14 @@ const baseUrl = 'http://localhost:9000/mentors/';
 
 export const addPost = (post) => {
   return async (dispatch) => {
-    let response = await fetch(baseUrl, {
+    const response = await fetch(baseUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(post),
     });
-    let data = await response.json();
+    const data = await response.json();
     console.log('Response from server', data);
     dispatch(ADD_POST(post));
   };
@@ -41,14 +46,14 @@ export const addPost = (post) => {
 
 export const updatePost = (id, post) => {
   return async (dispatch) => {
-    let response = await fetch(baseUrl + id, {
+    const response = await fetch(baseUrl + id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(post),
     });
-    let data = await response.json();
+    const data = await response.json();
     console.log('Response from server', data);
     dispatch(PATCH_POST(post));
   };
@@ -56,15 +61,21 @@ export const updatePost = (id, post) => {
 
 export const fetchPosts = () => {
   return async (dispatch) => {
-    let response = await fetch(baseUrl);
-    let data = await response.json();
+    const response = await fetch(baseUrl);
+    const data = await response.json();
     dispatch(FETCH_POSTS(data));
   };
 };
 
+export const fetchPost = (id) => {
+  return async (dispatch) => {
+    const response = await fetch(baseUrl + id);
+    const data = await response.json();
+    dispatch(FETCH_POST(data));
+  };
+};
+
 export const deletePost = (id) => {
-  // http communication
-  console.log(`delete id`, id);
   return (dispatch) => {
     fetch(baseUrl + id, {
       method: 'DELETE',
@@ -76,10 +87,8 @@ export const deletePost = (id) => {
       })
       .catch((err) => console.log(err));
   };
-  // return {type: DELETE_POST, payload: {id}}
 };
 
-// export actions and reducer
-export const { FETCH_POSTS, ADD_POST, DELETE_POST, PATCH_POST } =
+export const { FETCH_POSTS, FETCH_POST, ADD_POST, DELETE_POST, PATCH_POST } =
   postReducer.actions;
 export default postReducer.reducer;

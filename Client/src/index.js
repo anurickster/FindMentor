@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import postReducer from './store/post-reducer';
 import authReducer from './store/auth-reducer';
+import courseReducer from './store/course-reducer';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 /*
@@ -28,7 +29,7 @@ const composedEnhancer = composeWithDevTools(
 );
 
 const store = createStore(
-  combineReducers({ postReducer, authReducer }),
+  combineReducers({ postReducer, authReducer, courseReducer }),
   composedEnhancer
 );
 
