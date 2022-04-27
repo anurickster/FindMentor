@@ -28,7 +28,7 @@ const MultipleInput = (props) => {
       cart.push(input);
       // props.Array.push(input);
       document.getElementById("inputcart").value = "";
-      setInput(null);
+      setInput("");
     } else {
       alert("Please " + props.placeholder);
     }

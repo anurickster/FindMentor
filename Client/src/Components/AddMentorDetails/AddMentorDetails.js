@@ -4,7 +4,6 @@ import tokenDecoder from "../../addons/tokenDecoder";
 import Navigationbar from "../Navigationbar/Navigationbar";
 import MultipleInput from "../../addons/MultipleInput";
 import Learning from "../Images/Learning.png";
-
 import axios from "axios";
 import { logout } from "../../store/auth-reducer";
 
@@ -32,7 +31,7 @@ const AddMentorDetails = (p) => {
     mOcc: "",
     mAbout: "",
     mSkills: [],
-    imgUrl: null,
+    imgUrl: "",
     mExp: "",
     mWebsite: "",
     mGithub: "",
@@ -43,7 +42,6 @@ const AddMentorDetails = (p) => {
 
   const [addedmSkills, setAddedmSkills] = useState([]);
 
-  const [show, setShow] = useState(false);
 
   useEffect(() => {
     // saveMuserId();
@@ -85,7 +83,7 @@ const AddMentorDetails = (p) => {
         .then((res) => {
           console.log(res.data);
           // formVisibility(false);
-          p.setShow(true);
+          p.setShowC(false);
         })
         .catch((err) => {
           console.log(err);
