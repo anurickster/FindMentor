@@ -21,10 +21,11 @@ const MentorCards = () => {
   // const ImgArray = [Img1, Img2, Img3, Img4, Img5];
 
   const mentors = useSelector((state) => {
+    console.log('state', state);
     return state.postReducer.posts;
   });
 
-  console.dir(mentors);
+  console.log(mentors);
 
   useEffect(() => {
     dispatch(fetchPosts());

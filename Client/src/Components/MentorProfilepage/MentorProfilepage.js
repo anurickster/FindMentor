@@ -23,7 +23,8 @@ const MentorProfilepage = () => {
   };
 
   const mentorProfile = useSelector((state) => {
-    return state.postReducer.posts;
+    console.log(state);
+    return state.postReducer.post;
   });
 
   useEffect(() => {
@@ -63,7 +64,7 @@ const MentorProfilepage = () => {
               <div className='Skills'>
                 <h3>Skills</h3>
                 <div className='skills__list'>
-                  {mentorProfile.mSkills?.map((skill, i) => (
+                  {mentorProfile?.mSkills?.map((skill, i) => (
                     <div key={'id' + i} className='Skill__div'>
                       <p className='Skills__badge'>{skill}</p>
                     </div>

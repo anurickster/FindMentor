@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-
 import './module.ViewCoursespage.css';
 import axios from 'axios';
 import Img1 from '../Images/1.jpg';
@@ -45,7 +44,7 @@ const ViewCoursespage = () => {
 
   const DeleteMentor = async (event, id) => {
     event.preventDefault();
-    await axios.delete(`http://localhost:7000/mentors/${id}`);
+    await axios.delete(`http://localhost:9000/mentors/${id}`);
 
     setMentors(mentors.filter((mentor) => mentor.id !== id));
   };
