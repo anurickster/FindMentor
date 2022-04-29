@@ -63,7 +63,6 @@ export const fetchPosts = () => {
   return async (dispatch) => {
     const response = await fetch(baseUrl);
     const data = await response.json();
-    console.log('Response from fectposts', data);
     dispatch(FETCH_POSTS(data));
   };
 };
@@ -72,7 +71,6 @@ export const fetchPost = (id) => {
   return async (dispatch) => {
     const response = await fetch(baseUrl + id);
     const data = await response.json();
-    console.log('Response from fetchPost', data);
     dispatch(FETCH_POST(data));
   };
 };

@@ -7,6 +7,9 @@ const courseReducer = createSlice({
     FETCH_COURSES(state, action) {
       return { courses: action.payload };
     },
+    FETCH_COURSE(state, action) {
+      return { course: action.payload };
+    },
     ADD_COURSE(state, action) {
       let newCourses = [...state.courses, action.payload];
       return { courses: newCourses };
@@ -73,7 +76,6 @@ export const deleteCourse = (id) => {
     })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         dispatch(DELETE_COURSE({ id }));
       })
       .catch((err) => console.log(err));

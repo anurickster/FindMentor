@@ -12,6 +12,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Rating from '@mui/material/Rating';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCourses } from '../../store/course-reducer';
 
 const ViewCoursespage = () => {
   const navigate = useNavigate();
@@ -22,16 +24,27 @@ const ViewCoursespage = () => {
   const [usertype, setUsertype] = useState('');
   const [userId, setUserId] = useState('');
 
-  useEffect(() => {
+  const loadCourses = (mentorId) => {
     axios
-      .get('http://localhost:9000/courses')
+      .get('http://localhost:9000/courses/mentorCourses/' + mentorId)
       .then((res) => {
-        setCoursesList(res.data);
+        // setCoursesList(res.data); // this will set the course but cause infinite loop pls fix it
+        console.log(`mentor ID` + mentorId);
+        console.log('courses data', res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  };
+
+  const mentorProfile = useSelector(async (state) => {
+    loadCourses(state.postReducer.post._id);
+    return await state.postReducer.post;
+  });
+
+  // useEffect(() => {
+
+  // }, []);
 
   const ShowMoreOptions = (event, id) => {
     event.preventDefault();

@@ -15,6 +15,11 @@ router.get('/:id', async (req, res) => {
   console.log(req.params.id);
 });
 
+router.get('/mentorCourses/:mid', async (req, res) => {
+  let course = await Course.find({ mentor_ref_id: req.params.mid });
+  res.json(course);
+});
+
 // protect route: by [isAuthenticatedUser, authorizeRoles('admin')]
 router.post('/', async (req, res) => {
   // db and insert one course
