@@ -23,7 +23,6 @@ const MentorProfilepage = () => {
   };
 
   const mentorProfile = useSelector((state) => {
-    console.log(state);
     return state.postReducer.post;
   });
 
@@ -34,6 +33,16 @@ const MentorProfilepage = () => {
       dispatch(fetchPost(dTokendata));
     }
   }, [dispatch, id, dTokendata]);
+
+  useEffect(() => {
+    if (
+      !mentorProfile?.mAbout &&
+      !mentorProfile?.mOcc &&
+      mentorProfile?.mSkills?.length === 0
+    ) {
+      setShow(true);
+    }
+  }, [mentorProfile]);
 
   return (
     <>

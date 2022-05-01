@@ -3,13 +3,11 @@ import tokenDecoder from '../../addons/tokenDecoder';
 import { useDispatch } from 'react-redux';
 import MultipleInput from '../../addons/MultipleInput';
 import Learning from '../Images/Learning.png';
-import { updatePost } from '../../store/post-reducer';
+import { updatePost, fetchPost } from '../../store/post-reducer';
 
 const AddMentorDetails = (p) => {
   const dTokendata = tokenDecoder().id;
   const dispatch = useDispatch();
-
-  console.log(dTokendata, 'dTokendata');
 
   const [mentorDetails, setMentorDetails] = useState({
     mOcc: '',
@@ -33,6 +31,7 @@ const AddMentorDetails = (p) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     p.setShowC(false);
+    dispatch(fetchPost(dTokendata));
     return (
       mentorDetails.mSkills.push(...addedmSkills),
       dispatch(updatePost(dTokendata, mentorDetails))

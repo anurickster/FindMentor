@@ -16,7 +16,7 @@ const postReducer = createSlice({
     },
     PATCH_POST(state, action) {
       const newPost = [...state.posts, action.payload];
-      return { posts: newPost };
+      return { post: newPost };
     },
     DELETE_POST(state, action) {
       const filteredPosts = state.posts.filter(
