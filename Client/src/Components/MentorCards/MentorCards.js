@@ -146,7 +146,7 @@ const MentorCards = () => {
                   <p>inventore laudantium exercitationem, magni ab!</p>
                   <Link
                     className='BTN ViewDetails '
-                    to={`/mentorprofile/${mentor.mUserid?._id}`}
+                    to={`/mentorprofile/${mentor.mUserid._id}`}
                     exact='true'
                   >
                     View Profile

@@ -15,9 +15,9 @@ const AddCoursepage = () => {
   const dispatch = useDispatch();
   const dTokendata = tokenDecoder().id;
   let { id } = useParams();
-  const mentorProfile = useSelector((state) => {
-    return state.postReducer.post;
-  });
+  // const mentorProfile = useSelector((state) => {
+  //   return state.postReducer.post;
+  // });
 
   const [addedlevel, setAddedlevel] = useState([]);
   const [addedcourse_content, setAddedcourse_content] = useState([]);
@@ -29,11 +29,11 @@ const AddCoursepage = () => {
     description: '',
     course_content: [],
     students: 0,
-    mentor_ref_id: mentorProfile._id,
+    mentor_ref_id: dTokendata,
     price: '',
     course_image: '',
   });
-  console.log('mentorProfile', mentorProfile?._id);
+  console.log('mentorProfile', dTokendata);
 
   useEffect(() => {
     dispatch(fetchPost(dTokendata));

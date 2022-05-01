@@ -7,8 +7,8 @@ const courseReducer = createSlice({
     FETCH_COURSES(state, action) {
       return { courses: action.payload };
     },
-    FETCH_COURSE(state, action) {
-      return { course: action.payload };
+    FETCH_M_COURSES(state, action) {
+      return { mCourses: action.payload };
     },
     ADD_COURSE(state, action) {
       let newCourses = [...state.courses, action.payload];
@@ -67,6 +67,14 @@ export const fetchCourses = () => {
   };
 };
 
+export const fetchMCourses = (id) => {
+  return async (dispatch) => {
+    let response = await fetch(baseUrl + id);
+    let data = await response.json();
+    dispatch(FETCH_M_COURSES(data));
+  };
+};
+
 export const deleteCourse = (id) => {
   // http communication
   console.log(`delete id`, id);
@@ -84,6 +92,11 @@ export const deleteCourse = (id) => {
 };
 
 // export actions and reducer
-export const { FETCH_COURSES, ADD_COURSE, DELETE_COURSE, PATCH_COURSE } =
-  courseReducer.actions;
+export const {
+  FETCH_COURSES,
+  FETCH_M_COURSES,
+  ADD_COURSE,
+  DELETE_COURSE,
+  PATCH_COURSE,
+} = courseReducer.actions;
 export default courseReducer.reducer;

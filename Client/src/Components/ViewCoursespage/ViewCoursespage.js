@@ -11,9 +11,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Rating from '@mui/material/Rating';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchCourses } from '../../store/course-reducer';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import tokenDecoder from '../../addons/tokenDecoder';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { fetchCourses } from '../../store/course-reducer';
 
 const ViewCoursespage = () => {
   const navigate = useNavigate();
@@ -21,15 +22,17 @@ const ViewCoursespage = () => {
   const [coursesList, setCoursesList] = useState(['']);
   const ImgArray = [Img1, Img2, Img3, Img4, Img5];
   const [moreOptions, setMoreOptions] = useState(0); //for more options
-  const [usertype, setUsertype] = useState('');
-  const [userId, setUserId] = useState('');
+  const [usertype] = useState('');
+  const [userId] = useState('');
+  const mentorId = useParams();
+  const tokenId = tokenDecoder().id;
+  console.log(mentorId, 'mentorId');
 
-  const loadCourses = (mentorId) => {
+  const loadCourses = (id) => {
     axios
-      .get('http://localhost:9000/courses/mentorCourses/' + mentorId)
+      .get('http://localhost:9000/courses/mentorCourses/' + id)
       .then((res) => {
-        // setCoursesList(res.data); // this will set the course but cause infinite loop pls fix it
-        console.log(`mentor ID` + mentorId);
+        setCoursesList(res.data); // this will set the course but cause infinite loop pls fix it
         console.log('courses data', res.data);
       })
       .catch((err) => {
@@ -37,14 +40,13 @@ const ViewCoursespage = () => {
       });
   };
 
-  const mentorProfile = useSelector(async (state) => {
-    loadCourses(state.postReducer.post._id);
-    return await state.postReducer.post;
-  });
-
-  // useEffect(() => {
-
-  // }, []);
+  useEffect(() => {
+    if (mentorId.id) {
+      loadCourses(mentorId.id);
+    } else {
+      loadCourses(tokenId);
+    }
+  }, [mentorId.id, tokenId]);
 
   const ShowMoreOptions = (event, id) => {
     event.preventDefault();
