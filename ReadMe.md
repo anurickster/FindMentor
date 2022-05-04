@@ -28,6 +28,8 @@ Member Name: Member Action
   > using single UserID to post course fetchmentors and view course
   > some bugs fixed
   > modified backend for use 1 userID to serve all relations of data
+- 5-5-2022
+  > mentorProfilePage on submit action.payload data is shown and posted same data to server
 
 ### Removed
 
